@@ -1,3 +1,52 @@
+# MariaDB 수강신청 데이터베이스
+
+학생·강사·과목·수강신청의 4개 테이블을 만들고, 데이터 입력과 6개 SQL 요구사항을 수행한 데이터베이스 과제입니다.
+
+![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square)
+![HeidiSQL](https://img.shields.io/badge/HeidiSQL-555555?style=flat-square)
+
+[실행 순서](#실행-순서) · [스키마](#스키마) · [과제 보고서와 SQL 원문](#과제-보고서)
+
+<img src="screenshots/최종질의쿼리.png" alt="기존 과제 결과: HeidiSQL의 최종 질의 실행 화면" width="800">
+
+## 스키마
+
+| 테이블 | 키와 연결 |
+| --- | --- |
+| 학생 | `학번` 기본 키 |
+| 강사 | `강사번호` 기본 키 |
+| 과목 | `과목코드` 기본 키, `강사번호` 외래 키 |
+| 수강신청 | `신청번호` 기본 키, `학번`·`과목코드` 외래 키 |
+
+## 실행 순서
+
+MariaDB에 접속한 뒤, 아래 보고서 **3. SQL 쿼리 첨부**의 SQL 블록을 순서대로 실행합니다.
+
+1. **3.1 DDL** — 학생·강사·과목·수강신청 테이블을 생성합니다.
+2. **3.2 DML** — 각 테이블에 10개 샘플 데이터를 입력합니다.
+3. **3.3 질의** — 조회·그룹화·서브쿼리·수정·삭제를 순서대로 수행합니다.
+
+현재 `SQL_query/`의 개별 SQL 파일은 비어 있으며, 실행할 쿼리 원문은 이 README의 보고서 안에 있습니다.
+
+## 요구사항
+
+| 번호 | 내용 |
+| --- | --- |
+| 1 | 컴퓨터공학 학생 조회와 정렬 |
+| 2 | 3학점 과목 강사 중복 없이 조회 |
+| 3 | 강사가 2명 이상인 학과 집계 |
+| 4 | 특정 강사 과목의 미입력 성적 수정 |
+| 5 | 수강생이 3명 이상인 과목·강사 조회 |
+| 6 | 수강생이 없는 과목 삭제 |
+
+원래 제출한 설치 인증·DDL·DML·질의 결과 화면을 아래에 보관했습니다.
+
+## 과제 보고서
+
+<details>
+<summary>기존 과제 보고서 펼치기</summary>
+
 # 데이터베이스 언어 SQL 보고서 
 > [GitHub 바로가기](https://github.com/jeongiryang/DatabaseLanguage_SQL_Assignment.git)
 
@@ -173,3 +222,5 @@ WHERE 과목코드 NOT IN (SELECT DISTINCT 과목코드 FROM 수강신청);
 
 
 ```
+
+</details>
